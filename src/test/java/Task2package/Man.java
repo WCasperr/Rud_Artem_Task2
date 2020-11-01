@@ -1,3 +1,5 @@
+package Task2package;
+
 public class Man{
     private int height;
     private int weight;
@@ -19,7 +21,7 @@ public class Man{
     public String getHairColor() { return hairColor; }
     public void setHairColor(String hairColor) { this.hairColor = hairColor; }
     public void AboutMan(){
-        System.out.println("Man height is - "+getHeight() + "\n Man weight is - " + getWeight()
-                +"\n Man hair color is - " + getHairColor());
+        System.out.println("Task2package.Man height is - "+getHeight() + "\n Task2package.Man weight is - " + getWeight()
+                +"\n Task2package.Man hair color is - " + getHairColor());
     }
 }
