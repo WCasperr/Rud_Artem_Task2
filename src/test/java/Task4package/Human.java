@@ -1,21 +1,16 @@
 package Task4package;
 
-import Task3package.Vegetable;
-
 import java.util.ArrayList;
 
 public class Human {
-private boolean genderType;
-private String name;
-private String lastName;
-private float height;
-private float weight;
-    private ArrayList<> list = new ArrayList<>();
+    private boolean genderType;
+    private String name;
+    private String lastName;
+    private float height;
+    private float weight;
 
-    public void add(String Name, String Color, double Weight, int Calories) {
-        Vegetable vegetable = new Vegetable(Name, Color, Weight, Calories);
-        salad.add(vegetable);
-    }
+    private ArrayList<Human> list = new ArrayList<>();
+
     public boolean isGenderType() {
         return genderType;
     }
@@ -55,4 +50,6 @@ private float weight;
     public void setWeight(float weight) {
         this.weight = weight;
     }
+
 }
+
