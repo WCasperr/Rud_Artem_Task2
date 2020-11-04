@@ -1,6 +1,9 @@
 package Task3package;
 
 
+import java.util.ArrayList;
+import java.util.Comparator;
+
 public class Task3 {
     public static void main(String[] args) {
 
@@ -14,6 +17,10 @@ public class Task3 {
         System.out.println("Vegetables equals : " + c.compareVegetables(c.getSalad().get(2), c.getSalad().get(4)));
         c.DeleteByName("Ban");
         c.DeleteByColor("yellow");
+        c.salad.sort(Comparator.comparing(Vegetable::getCalories));
+        c.salad.sort(Comparator.comparing(Vegetable::getCalories).reversed());
+        c.salad.sort(Comparator.comparing(Vegetable::getWeight));
+        c.salad.sort(Comparator.comparing(Vegetable::getWeight).reversed());
         c.View();
         System.out.println("Calories: " + c.getSaladCalories());
     }

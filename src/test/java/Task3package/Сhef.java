@@ -1,13 +1,10 @@
 package Task3package;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Сhef {
-    private String dName;
-    private String dColor;
-    private double dWeight;
-    private int dCalories;
-    private ArrayList<Vegetable> salad = new ArrayList<>();
+    ArrayList<Vegetable> salad = new ArrayList<>();
 
     public void add(String Name, String Color, double Weight, int Calories) {
         Vegetable vegetable = new Vegetable(Name, Color, Weight, Calories);
