@@ -1,0 +1,5 @@
+# Project exclude paths
+/target/
+pom.xml
+Rud_Artem_Task2.iml
+misc.x
