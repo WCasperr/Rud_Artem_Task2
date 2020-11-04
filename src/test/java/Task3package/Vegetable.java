@@ -3,32 +3,32 @@ package Task3package;
 import java.util.Objects;
 
 public class Vegetable extends Сhef {
-    private String Name;
-    private String Color;
-    private double Weight;
-    private double Calories;
+    private String name;
+    private String color;
+    private double weight;
+    private double calories;
 
     public Vegetable(String Name, String Color, double Weight, int Calories) {
-        this.Name = Name;
-        this.Color = Color;
-        this.Weight = Weight;
-        this.Calories = Calories;
+        this.name = Name;
+        this.color = Color;
+        this.weight = Weight;
+        this.calories = Calories;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public String getColor() {
-        return Color;
+        return color;
     }
 
     public double getWeight() {
-        return Weight;
+        return weight;
     }
 
     public double getCalories() {
-        return Calories;
+        return calories;
     }
 
     @Override

@@ -31,9 +31,11 @@ public class Сhef {
     public void DeleteByName(String dName) {
         salad.removeIf(str1 -> str1.getName().equals(dName));
     }
+
     public void DeleteByColor(String dColor) {
         salad.removeIf(str1 -> str1.getColor().equals(dColor));
     }
+
     public void View() {
         for (Object v : salad) {
             System.out.println(v);
