@@ -1,0 +1,39 @@
+Index: src/test/java/Task3package/Task3.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Task3package;\r\n\r\n\r\npublic class Task3 {\r\n    public static void main(String[] args) {\r\n\r\n        Сhef c = new Сhef();\r\n\r\n        c.add(\"Man\", \"pink\", 1, 5);\r\n        c.add(\"Tam\", \"yellow\", 2, 6);\r\n        c.add(\"Son\", \"brown\", 3, 7);\r\n        c.add(\"Ban\", \"black\", 4, 8);\r\n        c.add(\"Ban\", \"black\", 4, 8);\r\n        System.out.println(\"Vegetables equals : \" + c.compareVegetables(c.getSalad().get(2), c.getSalad().get(4)));\r\n        c.DeleteByName(\"Ban\");\r\n        c.DeleteByColor(\"yellow\");\r\n        c.View();\r\n        System.out.println(\"Calories: \" + c.getSaladCalories());\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/Task3package/Task3.java	(revision 71b7a5bde2d932b6efc71dafe26656db0223c382)
++++ src/test/java/Task3package/Task3.java	(date 1604441489283)
+@@ -14,7 +14,9 @@
+         System.out.println("Vegetables equals : " + c.compareVegetables(c.getSalad().get(2), c.getSalad().get(4)));
+         c.DeleteByName("Ban");
+         c.DeleteByColor("yellow");
+-        c.View();
++       // c.DeleteAllVegetables();
++        c.getSalad();
++
+         System.out.println("Calories: " + c.getSaladCalories());
+     }
+ }
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(revision 71b7a5bde2d932b6efc71dafe26656db0223c382)
++++ .idea/misc.xml	(date 1604441224506)
+@@ -8,7 +8,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager">
++  <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
