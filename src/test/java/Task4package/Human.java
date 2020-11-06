@@ -1,115 +1,81 @@
 package Task4package;
 import java.util.Random;
-import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Human {
-    private boolean genderType;
-    private String name;
-    private String lastName;
-    private float height;
-    private float weight;
 
-    private ArrayList<Human> list = new ArrayList<>();
-    public Human (){
-        genderType = false;
-        name = "Child";
-        lastName = "ChildLastName";
-        height = 30;
-        weight = 3;
-    }
-    public Human(boolean genderType, String name, String lastName, float height, float weight) {
-        this.genderType = genderType;
+    protected String name;
+    protected String surname;
+    protected float height;
+    protected float weight;
+    public Random random;
+    public Scanner scanner;
+    private Human human;
+
+    public Human(String name, String surname, float height, float weight){
         this.name = name;
-        this.lastName = lastName;
+        this.surname = surname;
         this.height = height;
         this.weight = weight;
+        this.random = new Random();
+        this.scanner = new Scanner(System.in);
     }
 
-    public boolean isGenderType() {
-        return genderType;
-    }
+    public String getName(){return name;}
+    public void setName(){this.name = name;}
+    public String getSurname(){return surname;}
+    public void setSurname(){this.surname = surname;}
+    public float getHeight(){return height;}
+    public void setHeight(){this.height = height;}
+    public float getWeight(){return weight;}
+    public void setWeight(){this.weight = weight;}
 
-    public void setGenderType(boolean genderType) {
-        this.genderType = genderType;
-    }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public float getHeight() {
-        return height;
-    }
-
-    public void setHeight(float height) {
-        this.height = height;
-    }
-
-    public float getWeight() {
-        return weight;
-    }
-
-    public void setWeight(float weight) {
-        this.weight = weight;
-    }
-    public String toString(){
-        return "This " +genderType+ "'s name " + name + " and surname "+lastName+", is "+height+" tall and weigh "+weight+ " kilos";
-    }
-    public boolean talk(boolean man, boolean woman){
-        if (!man && !woman)
-        {
-            return true;
+    public boolean toSpeak(boolean men, boolean women){
+        if (men == false && women == false){ return true;}
+        else if (men == true && women == false){return true;}
+        else if (men == false && women == true){return true;}
+        else if (men == true && women == true){
+            if (random.nextInt(100)<50){return true;}
+            else {return false;}
         }
-        else if (man && !woman){
-            return true;
+        return false;
+    }
+
+    public boolean tolerateCommunity(boolean men, boolean women){
+        if (men == false && women == false){
+            if (random.nextInt(100)<5){return true;}
         }
-        else if (!man){
-            return true;
+        else if(men == false && women == true){
+            if (random.nextInt(100)<70){return true;}
         }
-        else {
-            Random r1 = new Random();
-            if (r1.nextInt(100) < 50)
-            {
-                return true;
-            }
-            else
-                return false;
+        else if (men == true && women == false){
+            if (random.nextInt(100)<70){return true;}
+        }
+        else if (men == true && women == true){
+            if (random.nextInt(100)<5.6){return true;}
+        }
+        return false;
+    }
+
+    public boolean spendTimeTogether(Men men, Woman women){
+        if (men.getHeight() <= women.getHeight() && (men.getHeight()*0.1)>women.getHeight()){
+            return random.nextInt(100) < 85;
+        }
+        else if (men.getHeight() >= women.getHeight() && (women.getHeight()*0.1)<women.getHeight()){
+            return random.nextInt(100) < 95;
+        }
+        return false;
+    }
+
+    public void beInRelationship(Men men, Woman women) {
+        if (toSpeak(true, false) && tolerateCommunity(true, false) &&
+                spendTimeTogether(men, women)) {
+            women.bornChild(human);
         }
     }
-    public boolean company(boolean man, boolean woman){
-        if (man && woman){
-            Random r2 = new Random();
-            if (r2.nextInt(100) < 5){
-                return true;
-            }
-        }
-        else if (!man && woman){
-            Random r3 = new Random();
-            if (r3.nextInt(100) < 70){
-                return true;
-            }
-        }
-        else if (man){
-            Random r4 = new Random();
-            if (r4.nextInt(100) < 70){
-                return true;
-            }
-        }
 
-            return false;
+    public void compatibilityTest(Men men, Woman women){
+        beInRelationship(men, women);
     }
-
 }
-

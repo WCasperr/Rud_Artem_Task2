@@ -1,7 +1,10 @@
 package Task4package;
 
-public class Man extends Human {
-    public Man(boolean genderType, String name, String surname, float height, float weight) {
-        super(genderType, name, surname, height, weight);
+class Men extends Human{
+    protected boolean genderMale = true;
+    public Men(String name, String surname, float height, float weight, boolean genderMale){
+        super(name, surname, height, weight);
+        this.genderMale = genderMale;
     }
+    public boolean getGenderMale(){return genderMale;}
 }
